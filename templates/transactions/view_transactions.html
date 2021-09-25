@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for transaction in all_transactions %}
+        <div class="transaction">
+                <p>Merchant: {{transaction.merchant.name}}</p>
+                <p>Tag: {{transaction.tag.name}}</p>
+                <p>Amount: £{{transaction.amount}}</p>
+        </div>
+    {% endfor %}
+{% endblock content %}
