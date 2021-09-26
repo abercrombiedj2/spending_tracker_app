@@ -29,3 +29,8 @@ def select_all():
         tag = Tag(row['name'], row['id'])
         tags.append(tag)
     return tags
+
+def update(tag):
+    sql = "UPDATE tags SET name = %s WHERE id = %s"
+    values = [tag.name, tag.id]
+    run_sql(sql, values)

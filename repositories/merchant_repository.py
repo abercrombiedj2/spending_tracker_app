@@ -29,3 +29,8 @@ def select_all():
         merchant = Merchant(row['name'], row['id'])
         merchants.append(merchant)
     return merchants
+
+def update(merchant):
+    sql = "UPDATE merchants SET name = %s WHERE id = %s"
+    values = [merchant.name, merchant.id]
+    run_sql(sql, values)
