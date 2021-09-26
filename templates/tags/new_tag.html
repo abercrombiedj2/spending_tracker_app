@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<div class="content">
 <form action="/tags" method="post">
     <div>
         <label for="name">Tag Name:</label>
@@ -9,5 +9,6 @@
     </div>
     <button type="submit">Add Tag</button>
 </form>
+</div>
 
 {% endblock content %}

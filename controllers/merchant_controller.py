@@ -4,7 +4,7 @@ import repositories.merchant_repository as merchant_repository
 
 merchants_blueprint = Blueprint("merchants", __name__)
 
-@merchants_blueprint.route("/merchants")
+@merchants_blueprint.route("/merchants/view_merchants")
 def view_merchants():
     merchants = merchant_repository.select_all()
     return render_template("/merchants/view_merchants.html", all_merchants=merchants)
@@ -30,4 +30,4 @@ def update_merchant(id):
     name = request.form['merchant_name']
     merchant = Merchant(name, id)
     merchant_repository.update(merchant)
-    return redirect("/merchants")
+    return redirect("/")

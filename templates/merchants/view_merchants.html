@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
     {% for merchant in all_merchants %}
-        <div class="merchants">
+        <div class="content">
             <p>Merchant: {{merchant.name}}</p>
-        </div>    
-    {% endfor %}   
+            <a href="/merchants/{{merchant.id}}/edit_merchant">Edit Merchant</a>
+        </div>
+    {% endfor %}
 {% endblock content %}

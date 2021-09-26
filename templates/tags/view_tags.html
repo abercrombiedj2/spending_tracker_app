@@ -2,8 +2,9 @@
 
 {% block content %}
     {% for tag in all_tags %}
-        <div class="tags">
+        <div class="content">
             <p>Tag: {{tag.name}}</p>
+            <a href="/tags/{{tag.id}}/edit_tag">Edit Tag</a>
         </div>    
     {% endfor %}   
 {% endblock content %}

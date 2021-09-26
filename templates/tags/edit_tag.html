@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<div class="content">
 <form action="/tags/{{tag.id}}" method="post">
     <div>
         <label for="tag_name">Tag Name:</label>
@@ -8,5 +8,5 @@
     </div>
         <input type="submit">
 </form>
-    
+</div>
 {% endblock content %}

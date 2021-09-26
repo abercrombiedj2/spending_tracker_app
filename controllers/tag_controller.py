@@ -4,7 +4,7 @@ import repositories.tag_repository as tag_repository
 
 tags_blueprint = Blueprint("tags", __name__)
 
-@tags_blueprint.route("/tags")
+@tags_blueprint.route("/tags/view_tags")
 def view_tags():
     tags = tag_repository.select_all()
     return render_template("tags/view_tags.html", all_tags=tags)
@@ -30,4 +30,4 @@ def update_tag(id):
     tag_name = request.form['tag_name']
     tag = Tag(tag_name, id)
     tag_repository.update(tag)
-    return redirect("/tags")
+    return redirect("/")
