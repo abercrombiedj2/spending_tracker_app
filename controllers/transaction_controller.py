@@ -10,3 +10,20 @@ transactions_blueprint = Blueprint("transactions", __name__)
 def view_transactions():
     transactions = transaction_repository.select_all()
     return render_template("transactions/view_transactions.html", all_transactions=transactions)
+
+@transactions_blueprint.route("/transactions/new_transaction", methods=['GET'])
+def new_transaction():
+    merchants = merchant_repository.select_all()
+    tags = tag_repository.select_all()
+    return render_template("transactions/new_transaction.html", all_merchants=merchants, all_tags=tags)
+
+@transactions_blueprint.route("/transactions", methods=['POST'])
+def create_transaction():
+    amount = request.form['amount']
+    merchant_id = request.form['merchant_id']
+    tag_id = request.form['tag_id']
+    merchant = merchant_repository.select(merchant_id)
+    tag = tag_repository.select(tag_id)
+    transaction = Transaction(amount, merchant, tag)
+    transaction_repository.save(transaction)
+    return redirect("/transactions/view_transactions")
