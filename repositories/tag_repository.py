@@ -17,7 +17,7 @@ def select(id):
 
     if result is not None:
         tag = Tag(result['name'], result['id'])
-    return result
+    return tag
 
 def select_all():
     tags=[]
