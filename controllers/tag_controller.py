@@ -27,11 +27,8 @@ def edit_tag(id):
 
 @tags_blueprint.route("/tags/<id>", methods=['POST'])
 def update_tag(id):
-    tag_name = request.form['tag_name']
-    if request.form['tag_active'] == 'yes':
-        active = True
-    else:
-        active = False
-    tag = Tag(tag_name, id, active)
+    name = request.form['tag_name']
+    active = request.form['tag_active']
+    tag = Tag(name, id, active)
     tag_repository.update(tag)
     return redirect("/tags/view_tags")

@@ -5,11 +5,10 @@
     <div>
         <label for="merchant_name">Merchant Name:</label>
         <input type="text" id="merchant_name" name="merchant_name" value="{{merchant.name}}">
-        <label for="merchant_active">Active?</label>
-        <select id="merchant_active" name="merchant_active">
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-        </select>
+        <label for="merchant_active">Active</label>
+        <input type="radio" name="merchant_active" id="active" value="true">
+        <label for="merchant_active">Inactive</label>
+        <input type="radio" name="merchant_active" id="inactive" value="false">
     </div>
         <input type="submit">
 </form>

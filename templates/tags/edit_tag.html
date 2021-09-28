@@ -5,11 +5,10 @@
     <div>
         <label for="tag_name">Tag Name:</label>
         <input type="text" id="tag_name" name="tag_name" value="{{tag.name}}">
-        <label for="merchant_active">Active?</label>
-        <select id="tag_active" name="tag_active">
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-        </select>
+        <label for="tag_active">Active</label>
+        <input type="radio" name="tag_active" id="active" value="true">
+        <label for="merchant_active">Inactive</label>
+        <input type="radio" name="tag_active" id="inactive" value="false">
     </div>
         <input type="submit">
 </form>
