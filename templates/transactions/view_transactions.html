@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="total">Total: £{{total}}</div>
     {% for transaction in all_transactions %}
         <div class="content">
                 <p>Merchant: {{transaction.merchant.name}}</p>

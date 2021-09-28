@@ -10,7 +10,10 @@ transactions_blueprint = Blueprint("transactions", __name__)
 @transactions_blueprint.route("/transactions/view_transactions")
 def view_transactions():
     transactions = transaction_repository.select_all()
-    return render_template("transactions/view_transactions.html", all_transactions=transactions)
+    total = 0
+    for transaction in transactions:
+        total += transaction.amount
+    return render_template("transactions/view_transactions.html", all_transactions=transactions, total=total)
 
 @transactions_blueprint.route("/transactions/new_transaction", methods=['GET'])
 def new_transaction():

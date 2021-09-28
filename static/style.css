@@ -54,6 +54,14 @@ body {
     border-radius: 10px;
 }
 
+.total {
+    padding: 2vw;
+    background-color: #DE354C;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 4vw;
+    color: #F3F3F3;
+}
+
 input, select {
     padding: 2vw;
     margin-left: 2vw;
