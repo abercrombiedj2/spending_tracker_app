@@ -11,7 +11,9 @@
             <label for="merchant">Merchant:</label>
             <select id="merchant" name="merchant_id">
                 {% for merchant in all_merchants %}
+                    {% if merchant.active == True %}
                     <option value="{{merchant.id}}">{{merchant.name}}</option>
+                    {% endif %}
                 {% endfor %}
             </select>
         </p>
@@ -19,7 +21,9 @@
             <label for="tag">Tag:</label>
             <select id="tag" name="tag_id">
                 {% for tag in all_tags %}
+                    {% if tag.active == True %}
                     <option value="{{tag.id}}">{{tag.name}}</option>
+                    {% endif %}
                 {% endfor %}
             </select>
         </p>
