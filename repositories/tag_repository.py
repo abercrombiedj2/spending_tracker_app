@@ -1,10 +1,9 @@
 from db.run_sql import run_sql
 from models.tag import Tag
-from models.transaction import Transaction
 
 def save(tag):
-    sql = "INSERT INTO tags (name) VALUES (%s) RETURNING id"
-    values = [tag.name]
+    sql = "INSERT INTO tags (name, active) VALUES (%s, %s) RETURNING *"
+    values = [tag.name, tag.active]
     results = run_sql(sql, values)
     id = results[0]['id']
     tag.id = id
@@ -16,7 +15,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        tag = Tag(result['name'], result['id'])
+        tag = Tag(result['name'], result['id'], result['active'])
     return tag
 
 def select_all():
@@ -26,11 +25,11 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        tag = Tag(row['name'], row['id'])
+        tag = Tag(row['name'], row['id'], row['active'])
         tags.append(tag)
     return tags
 
 def update(tag):
-    sql = "UPDATE tags SET name = %s WHERE id = %s"
-    values = [tag.name, tag.id]
+    sql = "UPDATE tags SET (name, active) = (%s, %s) WHERE id = %s"
+    values = [tag.name, tag.active, tag.id]
     run_sql(sql, values)

@@ -4,6 +4,11 @@
     {% for tag in all_tags %}
         <div class="content">
             <p>Tag: {{tag.name}}</p>
+            {% if tag.active == True %}
+                <p>Active</p>
+            {% else %}
+                <p>Inactive</p>
+            {% endif %}
             <a href="/tags/{{tag.id}}/edit_tag">Edit Tag</a>
         </div>    
     {% endfor %}   

@@ -5,9 +5,13 @@
     <div>
         <label for="merchant_name">Merchant Name:</label>
         <input type="text" id="merchant_name" name="merchant_name" value="{{merchant.name}}">
+        <label for="merchant_active">Active?</label>
+        <select id="merchant_active" name="merchant_active">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+        </select>
     </div>
         <input type="submit">
 </form>
 </div>
-    
 {% endblock content %}

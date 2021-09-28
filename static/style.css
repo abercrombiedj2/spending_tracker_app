@@ -4,10 +4,11 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-areas: "nav" "header" "content";
+    grid-template-areas: "navbar" "header" "content";
 }
 
 .navbar {
+    grid-area: navbar;
     background-color: #3C1874;
 }
 
@@ -23,6 +24,7 @@ body {
 }
 
 .header {
+    grid-area: header;
     padding: 5%;
     background-color: #932432;
 }
@@ -35,7 +37,7 @@ body {
 }
 
 .content {
-    padding: 5%;
+    padding: 2%;
     background-color: #DE354C;
     font-family: 'DM Sans', sans-serif;
     font-size: 2em;

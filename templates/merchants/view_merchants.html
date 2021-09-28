@@ -5,6 +5,11 @@
     {% for merchant in all_merchants %}
         <div class="content">
             <p>Merchant: {{merchant.name}}</p>
+            {% if merchant.active == True %}
+                <p>Active</p>
+            {% else %}
+                <p>Inactive</p>
+            {% endif %}
             <a href="/merchants/{{merchant.id}}/edit_merchant">Edit Merchant</a>
         </div>
     {% endfor %}

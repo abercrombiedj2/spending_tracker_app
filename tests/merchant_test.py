@@ -11,3 +11,6 @@ class TestMerchant(unittest.TestCase):
 
     def test_merchant_has_id(self):
         self.assertEqual(None, self.merchant.id)
+
+    def test_merchant_is_active(self):
+        self.assertEqual(True, self.merchant.active)
