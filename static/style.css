@@ -40,10 +40,33 @@ body {
     padding: 2%;
     background-color: #DE354C;
     font-family: 'DM Sans', sans-serif;
-    font-size: 2em;
+    font-size: 2vw;
     color: #F3F3F3;
 }
 
-input[type=text] {
+.content a {
+    text-decoration: none;
+    padding: 2vw;
+    background-color: #3C1874;
+    color: #F3F3F3;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 2vw;
+    border-radius: 10px;
+}
 
+input, select {
+    padding: 2vw;
+    margin-left: 2vw;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 2vw;
+    
+}
+
+button, input[type=submit] {
+    padding: 2vw;
+    background-color: #3C1874;
+    color: #F3F3F3;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 2vw;
+    border-radius: 10px;
 }
