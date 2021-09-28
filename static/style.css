@@ -14,7 +14,7 @@ body {
 
 .navbar ul li {
     display: inline-block;
-    margin-right: 40px;
+    margin-right: 4vw;
 }
 
 .navbar ul li a {
@@ -25,19 +25,19 @@ body {
 
 .header {
     grid-area: header;
-    padding: 5%;
+    padding: 5vw;
     background-color: #932432;
 }
 
 .header h1 {
     text-align: center;
     font-family: 'Gideon Roman', cursive;
-    font-size: 4em;
+    font-size: 5vw;
     color: #F3F3F3;
 }
 
 .content {
-    padding: 2%;
+    padding: 2vw;
     background-color: #DE354C;
     font-family: 'DM Sans', sans-serif;
     font-size: 2vw;
